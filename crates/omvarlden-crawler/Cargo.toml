@@ -3,4 +3,23 @@ name = "omvarlden-crawler"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name = "omvarlden-crawler"
+doc = false
+test = false
+doctest = false
+
 [dependencies]
+anyhow = "1.0.88"
+async-trait = "0.1.82"
+clap = { version = "4.5.17", features = ["cargo", "derive"] }
+tokio = { version = "1.40.0", default-features = false, features = [
+    "macros",
+    "rt-multi-thread",
+] }
+tracing = { workspace = true }
+tracing-subscriber = { version = "0.3.18", features = ["env-filter", "json"] }
+webcrawler = { workspace = true }
+
+# local deps
+omvarlden-spider = { workspace = true }

@@ -1,3 +1,10 @@
 [workspace]
 resolver = "2"
 members = ["crates/*"]
+
+[workspace.dependencies]
+## local crates
+omvarlden-spider = { path = "./crates/omvarlden-spider" }
+## external crates
+tracing = "0.1.40"
+webcrawler = { git = "https://github.com/spraakbanken/swegov-opendata-rs.git" }

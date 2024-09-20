@@ -10,15 +10,11 @@ test = false
 doctest = false
 
 [dependencies]
-anyhow = "1.0.88"
-async-trait = "0.1.82"
-clap = { version = "4.5.17", features = ["cargo", "derive"] }
-tokio = { version = "1.40.0", default-features = false, features = [
-    "macros",
-    "rt-multi-thread",
-] }
+anyhow = { workspace = true }
+clap = { workspace = true }
+tokio = { workspace = true }
 tracing = { workspace = true }
-tracing-subscriber = { version = "0.3.18", features = ["env-filter", "json"] }
+tracing-subscriber = { workspace = true }
 webcrawler = { workspace = true }
 
 # local deps

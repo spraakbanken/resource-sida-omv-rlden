@@ -11,13 +11,17 @@ pub enum Error {
         error: io::Error,
     },
     CantCreateHttpClient(reqwest::Error),
-    FailedToGetText {
+    FailedToGetData {
         url: String,
         error: reqwest::Error,
     },
     FailedWritingFile {
         path: PathBuf,
         error: io::Error,
+    },
+    FailedWritingJson {
+        path: PathBuf,
+        error: serde_json::Error,
     },
     ScrapeError {
         url: String,
@@ -46,12 +50,17 @@ impl fmt::Display for Error {
             Self::CantCreateHttpClient(error) => {
                 f.write_fmt(format_args!("Can't create http client: {}", error))
             }
-            Self::FailedToGetText { url, error } => f.write_fmt(format_args!(
-                "Failed getting text from '{}': {}",
+            Self::FailedToGetData { url, error } => f.write_fmt(format_args!(
+                "Failed getting data from '{}': {}",
                 url, error
             )),
             Self::FailedWritingFile { path, error } => f.write_fmt(format_args!(
                 "Failed to write file '{}': {}",
+                path.display(),
+                error
+            )),
+            Self::FailedWritingJson { path, error } => f.write_fmt(format_args!(
+                "Failed to write JSON to '{}': {}",
                 path.display(),
                 error
             )),

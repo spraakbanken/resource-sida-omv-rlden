@@ -20,3 +20,6 @@ target/
 # output code
 output/
 visited.json
+stderr.jsonl
+stdout.txt
+*.tar.gz

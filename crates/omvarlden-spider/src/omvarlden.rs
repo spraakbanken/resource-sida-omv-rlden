@@ -4,7 +4,6 @@ use async_trait::async_trait;
 use flate2::Compression;
 use reqwest::{Client, Url};
 use scraper::{Html, Selector};
-use serde_json::Value;
 
 use crate::item::Item;
 use crate::Error;

@@ -2,13 +2,17 @@
 resolver = "2"
 members = ["crates/*"]
 
+[workspace.package]
+edition = "2021"
+rust-version = "1.74.0"
+
 [workspace.dependencies]
 ## local crates
 omvarlden-spider = { path = "./crates/omvarlden-spider" }
 
 ## external crates
 anyhow = "1.0.88"
-async-trait = { version = "0.1.68" }
+async-trait = { version = "0.1.82" }
 clap = { version = "4.5.17", features = ["cargo", "derive"] }
 flate2 = "1.0.33"
 reqwest = { version = "0.12.7", features = ["gzip"] }

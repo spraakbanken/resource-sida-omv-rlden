@@ -2084,8 +2084,8 @@ dependencies = [
 
 [[package]]
 name = "webcrawler"
-version = "0.1.0"
-source = "git+https://github.com/spraakbanken/webcrawler-rs.git#2bcb23a96d4f50e10463f32e7a8814ea0ec6fafe"
+version = "0.1.2"
+source = "git+https://github.com/spraakbanken/webcrawler-rs.git#b706d94296b2c02a3e3a298bb23a2fc38ababa21"
 dependencies = [
  "async-trait",
  "chrono",
